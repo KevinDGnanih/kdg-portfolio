@@ -1,4 +1,5 @@
 import React from 'react'
+import { AppWrap } from '../../wrapper';
 import './Footer.scss';
 
 const Footer = () => {
@@ -7,4 +8,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default AppWrap(Footer, 'footer');
