@@ -4,9 +4,9 @@ import imageUrlBuilder from '@sanity/image-url';
 export const client = sanityClient({
   projectId: 'scpqq8zp',
   dataset: 'production',
-  apiVersion: '2023-01-10',
+  apiVersion: '2022-02-01',
   useCdn: true,
-  token: 'skrNhKu4x9uVis5rxynZaYR1SesAkItt2GlUgs9VSK03MRHrH4NYd1wBLOIl4jMYpKjJ0MXwfhyFd6KLVDBsvYslLKOntyRvvOrk1w9sziS5dzizjmTwklhE5G1fBuYTJNa6NvY0CmXAzE1Z6LgKcSGB3g6p3SLny2n1m3RnpihV4tzl6Gtg',
+  token: 'skVsPk9aOzbD26lCMxkKFjRpFzmx59tY6NHPvavDWIHYnLeULjpobRMlGBzX3JmaVwKkJ5WLUTrcfpwDIFJL6BD1UPqX5cpbEv2teHkcTJ1VziSp3aDdIdeIYPPEaBqlt2xZh2A2ap2T7aoapBtawUGxBO2FDwL7fiUZGezeBmq7ptrxvE73',
 });
 
 const builder = imageUrlBuilder(client);
