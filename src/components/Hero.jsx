@@ -6,9 +6,9 @@ import { ComputersCanvas } from './canvas';
 
 const Hero = () => {
   return (
-    <section className='relative w-full h-screen mx-auto'>
-      <div className={`${styles.paddingX} absolute
-      inset-0 top-[120px] max-w-7xl mx-auto flex
+    <section className={`relative w-full h-screen mx-auto`}>
+      <div className={`absolute
+      inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex
       flex-row items-strat gap-5`}>
         <div className='flex flex-col
         justify-center items-center mt-5'>
@@ -17,15 +17,17 @@ const Hero = () => {
           <div>
             <h1 className={`${styles.heroHeadText} text-white`}>Hi, I'm <span className='text-[#915eff]'>Kevin</span></h1>
             <p className={`${styles.heroSubText} mt-2 text-white-100`}>I develop user interface <br className='sm:block hidden'/> 
-            and web applications</p>
+            and web applications
+            </p>
           </div>
-
         </div>
+
+        <ComputersCanvas />
         
       </div>
-      <ComputersCanvas />
+      
     </section>
   )
 }
 
-export default Hero
+export default Hero;
