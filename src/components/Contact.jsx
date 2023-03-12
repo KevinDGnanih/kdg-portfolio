@@ -19,9 +19,46 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {}
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  const handleSubmit = (e) => {}
+    setForm({ ...form, [name]: value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    emailjs.send(
+      'kdg-portfolio',
+      'template_kdg',
+      {
+        from_name: form.name,
+        to_name: 'Kevin',
+        from_email: form.email,
+        to_email: 'kevin.gnanih@gmail.com',
+        message: form.message,
+      },
+      'Zwi4NAAEeFcFsUpET'
+    )
+    .then(() => {
+      setLoading(false);
+      alert('Thank you. I will get back to you as soon as possible.');
+
+      setForm({
+        name: '',
+        email: '',
+        message: '',
+      })
+    }, (error) => {
+      setLoading(false)
+
+      console.log(error);
+
+      alert('Ahh, something went wrong. Please try again.')
+
+    });
+  };
 
   return (
     <div className='xl:mt--12 xl:flex-row
@@ -83,7 +120,7 @@ const Contact = () => {
             className='bg-tertiary py-3 px-8
             outline-none w-fit text-white
             font-bold shadow-md shadow-primary
-            rounded-xl'>Submit
+            rounded-xl'>Send
           </button>
         </form>
       </motion.div>
